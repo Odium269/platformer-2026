@@ -1,9 +1,9 @@
 ///  @desc core player logic
 
 // get player inputs
-key_left= keyboard_check(vk_left);
-key_right= keyboard_check(vk_right);
-key_jump= keyboard_check_pressed(vk_space);
+key_left = keyboard_check(vk_left);
+key_right = keyboard_check(vk_right);
+key_jump = keyboard_check_pressed(vk_space);
 
 //calculate movement
 var _move = key_right - key_left;
@@ -16,6 +16,7 @@ if (place_meeting(x,y+1,oWall)) && (key_jump)
 {
 	vsp = -jumpsp
 }
+
 //horizontal collision
 if (place_meeting(x+hsp,y,oWall))
 {
@@ -26,6 +27,7 @@ if (place_meeting(x+hsp,y,oWall))
 	hsp = 0;
 }
 x = x + hsp;
+
 //vertical collision
 if (place_meeting(x,y+vsp,oWall))
 {
